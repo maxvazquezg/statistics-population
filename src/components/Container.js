@@ -43,8 +43,8 @@ class Container extends Component {
 						<Route exact path="/Meow" render={(props) => <Meow {...props} lista={this.state.data} />} />
 						{(this.props.location.pathname !== '/Meow') && <footer>
 							<p>Información consultada del Servicio Web del Catálogo Único de Claves Geoestadísticas de INEGI,
-						<a target="_blank" href="http://www.beta.inegi.org.mx/servicios/catalogoUnico.html"> tomada de este enlace</a>.
-					</p>
+								<a target="_blank" href="http://www.beta.inegi.org.mx/servicios/catalogoUnico.html"> tomada de este enlace</a>.
+							</p>
 							<p>Fuente: INEGI. {this.state.info.fuenteInfo}</p>
 							<p>Fuente: INEGI. Encuesta Intercensal 2015</p>
 						</footer>}
