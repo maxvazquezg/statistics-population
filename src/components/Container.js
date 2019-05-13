@@ -31,31 +31,33 @@ class Container extends Component {
 	}
 
 	render() {
-		if(this.state.data.length > 0){
-		return (
-			<div className="container">
-				<br />
-				<Route exact path="/" render={(props) => <Chart {...props} lista={this.state.data} />} />
-				<Route exact path="/Grow" render={(props) => <ChartGrow {...props} lista={this.state.data} />} />
-				<Route exact path="/Gender" render={(props) => <Gender {...props} lista={this.state.data} />} />
-				<Route exact path="/ChartEstadistic" render={(props) => <ChartEstadistic {...props} lista={this.state.data} />} />
-				<Route exact path="/Map" render={(props) => <Map {...props} lista={this.state.data} />} />
-				<Route exact path="/Meow" render={(props) => <Meow {...props} lista={this.state.data} />} />
-				{(this.props.location.pathname !== '/Meow') && <footer>
-					<p>Información consultada del Servicio Web del Catálogo Único de Claves Geoestadísticas de INEGI, 
+		if (this.state.data.length > 0) {
+			return (
+				<div className="container">
+					<div className="jumbotron jumbotron-fluid">
+						<Route exact path="/" render={(props) => <Chart {...props} lista={this.state.data} />} />
+						<Route exact path="/Grow" render={(props) => <ChartGrow {...props} lista={this.state.data} />} />
+						<Route exact path="/Gender" render={(props) => <Gender {...props} lista={this.state.data} />} />
+						<Route exact path="/ChartEstadistic" render={(props) => <ChartEstadistic {...props} lista={this.state.data} />} />
+						<Route exact path="/Map" render={(props) => <Map {...props} lista={this.state.data} />} />
+						<Route exact path="/Meow" render={(props) => <Meow {...props} lista={this.state.data} />} />
+						{(this.props.location.pathname !== '/Meow') && <footer>
+							<p>Información consultada del Servicio Web del Catálogo Único de Claves Geoestadísticas de INEGI,
 						<a target="_blank" href="http://www.beta.inegi.org.mx/servicios/catalogoUnico.html"> tomada de este enlace</a>.
 					</p>
-					<p>Fuente: INEGI. {this.state.info.fuenteInfo}</p>
-					<p>Fuente: INEGI. Encuesta Intercensal 2015</p>
-				</footer>}
-				{(this.props.location.pathname === '/Meow') && <footer>
-					<p>Información consultada del Servicio Meow de Catálogo Meow del APILIST,
+							<p>Fuente: INEGI. {this.state.info.fuenteInfo}</p>
+							<p>Fuente: INEGI. Encuesta Intercensal 2015</p>
+						</footer>}
+						{(this.props.location.pathname === '/Meow') && <footer>
+							<p>Información consultada del Servicio Meow de Catálogo Meow del APILIST,
 						<a target="_blank" href="https://apilist.fun/i/randomcat"> tomada de este enlace</a>.
 					</p>
-					<p>Fuente: Meow</p>
-				</footer>}
-			</div>
-		);}
+							<p>Fuente: Meow</p>
+						</footer>}
+					</div>
+				</div>
+			);
+		}
 		return (
 			<div>
 				<img src={loading} />
